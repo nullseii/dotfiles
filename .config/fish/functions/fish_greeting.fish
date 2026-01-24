@@ -8,7 +8,7 @@ function fish_greeting
     set -l cows ~/.config/fish
 
     if test "$(whoami)" = "root"
-        cowsay -e "0" -f "$cows/shark.cow" "You are filled with DETERMINATION. This grants ROOT access." |
+        cowsay -e "0" -f "$cows/shark.cow" "You are filled with DETERMINATION." |
         lolcat -f
     else
         cowsay -e "^" -f "$cows/fish.cow" "You're blue now." | lolcat -f
