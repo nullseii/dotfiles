@@ -16,3 +16,6 @@ keybind = opt+shift+l=new_split:right
 # transparency
 background-opacity = 0.9
 background-blur = true
+
+# neovide like shader
+custom-shader = ~/.config/ghostty/shaders/cursor_smear.glsl
