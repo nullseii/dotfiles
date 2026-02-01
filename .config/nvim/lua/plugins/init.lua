@@ -69,4 +69,21 @@ return {
     lazy = false,
     opts = {},
   },
+  -- undotree, since I don't constantly commit
+  {
+    "jiaoshijie/undotree",
+    ---@module 'undotree.collector'
+    ---@type UndoTreeCollector.Opts
+    opts = {
+      -- your options
+    },
+    lazy = true,
+  },
+  -- similar to vscode error dashboard
+  {
+    "folke/trouble.nvim",
+    branch = "main", -- IMPORTANT!
+    lazy = false,
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+  },
 }
