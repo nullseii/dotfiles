@@ -1,8 +1,6 @@
 [tools]
-"cargo:ftch" = "latest"
-"cargo:pokeget" = "latest"
 java = "lts"
+node = "latest"
 pipx = "latest"
-python = "3.14"
 rust = "latest"
 watchexec = "latest"
