@@ -124,8 +124,8 @@
   "netstatsWidgetOptions": {
     "refreshFrequency": 2000,
     "showOnDisplay": "",
-    "showIcon": false,
-    "displayAsGraph": true
+    "showIcon": true,
+    "displayAsGraph": false
   },
   "cpuWidgetOptions": {
     "refreshFrequency": 2000,
