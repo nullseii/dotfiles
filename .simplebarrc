@@ -14,7 +14,7 @@
     "widgetsBackgroundColorAsForeground": true,
     "widgetMaxWidth": "160px",
     "slidingAnimationPace": 4,
-    "font": "JetBrainsMonoNL Nerd Font, Monaco, Menlo, monospace",
+    "font": "JetBrainsMonoNFP-Regular, Monaco, Menlo, monospace",
     "fontSize": "11px",
     "yabaiPath": "$(which yabai)",
     "aerospacePath": "/opt/homebrew/bin/aerospace",

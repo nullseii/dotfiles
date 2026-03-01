@@ -2,5 +2,6 @@
 java = "lts"
 node = "latest"
 pipx = "latest"
+python = "latest"
 rust = "latest"
 watchexec = "latest"
