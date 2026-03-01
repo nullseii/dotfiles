@@ -86,4 +86,42 @@ return {
     lazy = false,
     opts = {}, -- for default options, refer to the configuration section for custom setup.
   },
+  -- need to flex on everyone on discord that I use vim, btw
+  {
+    "vyfor/cord.nvim",
+    lazy = false,
+    ---@type CordConfig
+    opts = {
+      -- ...
+    },
+  },
+  {
+    "nvzone/showkeys",
+    cmd = "ShowkeysToggle",
+    opts = {
+      timeout = 1,
+      maxkeys = 5,
+      -- more opts
+    },
+  },
+  {
+    "rachartier/tiny-code-action.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+
+      -- optional picker via telescope
+      { "nvim-telescope/telescope.nvim" },
+      -- optional picker via fzf-lua
+      { "ibhagwan/fzf-lua" },
+      -- .. or via snacks
+      {
+        "folke/snacks.nvim",
+        opts = {
+          terminal = {},
+        },
+      },
+    },
+    event = "LspAttach",
+    opts = {},
+  },
 }

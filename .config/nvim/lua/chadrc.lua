@@ -16,7 +16,7 @@ M.base46 = {
 }
 
 M.nvdash = {
-  load_on_startup = false,
+  load_on_startup = true,
   header = {
     [[                               __                ]],
     [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
