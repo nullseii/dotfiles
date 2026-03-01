@@ -10,19 +10,18 @@ function fish_greeting
     # The greeting used to be skipped when fish_greeting was empty (not just undefined)
     # Keep it that way to not print superfluous newlines on old configuration
     test -n "$fish_greeting"
-    # check if tmux
-    if test "$TERM" = "tmux-256color"
+    # check if tmux or ghostty, if its neovim we give a different greeting
+    if test "$TERM" = "tmux-256color"; or test "$TERM" = "xterm-ghostty"
         #        if test "$(whoami)" = "root"
         #    cowsay -e "0" -f "$cows/shark.cow" "ROOT access granted. Be careful!" |
         #    lolcat -f
         #else
         #    cowsay -e "^" -f "$cows/fish.cow" "$fish_greeting" | lolcat -f
         #end
-        fastfetch --kitty-icat ~/Downloads/images/profile-pics/sans.png
-    end
-
-    if test "$TERM" = "xterm-ghostty"
         fastfetch
+    else
+        # nvim terminal
+        figlet -f slant "terminal" | lolcat -f
     end
 
     if set -q fish_private_mode

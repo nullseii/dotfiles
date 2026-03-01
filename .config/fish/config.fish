@@ -12,8 +12,20 @@ abbr --add jgf "jj git fetch"
 abbr --add jlg "jj log"
 abbr --add jnw "jj new"
 
+# calculator
+abbr --add calc "qalc"
 
+# matrix
+abbr --add matrix "unimatrix -c blue"
+
+# bottom task manager
+abbr --add btm "btm --process-memory-as-value"
+# updating all my programs
 abbr --add upd "update"
+
+# cbonsai
+abbr --add cbonsai "cbonsai -S -L 40 -t 0.1 -m 'hello, evand :)'"
+abbr --add cbonsainm "cbonsai -S -L 40 -t 0.1"
 
 # some folders
 abbr --add prj "z ~/Documents/programming"
@@ -44,7 +56,7 @@ abbr --add bw "brew"
 abbr --add bup "brew doctor && brew update && brew upgrade && brew cleanup && brew doctor"
 
 # mooc course
-abbr --add mooc "z /Users/evand/Library/Application Support/tmc/vscode/mooc-java-programming-i"
+abbr --add mooc "z /Users/evand/Library/Application Support/tmc/vscode/mooc-java-programming-ii"
 
 # break btop habit, btm is in rust btw (just like fish!)
 abbr --add btop "btm"
@@ -54,6 +66,9 @@ abbr --add htop "btm"
 # need thefuck to work, needs an alias
 thefuck --alias fk| source
 #abbr --add fk "fuck"
+
+# fetch
+abbr --add ftch "fastfetch"
 
 # --------------APPLICATIONS--------------
 
@@ -80,3 +95,5 @@ set -g fish_key_bindings fish_vi_key_bindings
 set -gx GPG_TTY "$(tty)"
 
 end
+
+fish_add_path /Users/evand/.spicetify
