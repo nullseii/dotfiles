@@ -2,8 +2,8 @@ function fish_greeting
     #    if not set -q fish_greeting
     set -l line1 (_ 'Welcome to fish, the friendly interactive shell')
     #    set -l line2 \n(printf (_ 'Type %shelp%s for instructions on how to use fish') (set_color green) (set_color normal))
-        set -g fish_greeting "$line1$line2"
-        #end
+    set -g fish_greeting "$line1$line2"
+    #end
 
     set -l cows ~/.config/fish
 
@@ -11,14 +11,22 @@ function fish_greeting
     # Keep it that way to not print superfluous newlines on old configuration
     test -n "$fish_greeting"
     # check if tmux or ghostty, if its neovim we give a different greeting
-    if test "$TERM" = "tmux-256color"; or test "$TERM" = "xterm-ghostty"
+    #if test "$TERM" = "tmux-256color"; or test "$TERM" = "xterm-ghostty"
+    if test "$TERM" = "xterm-ghostty"
         #        if test "$(whoami)" = "root"
         #    cowsay -e "0" -f "$cows/shark.cow" "ROOT access granted. Be careful!" |
         #    lolcat -f
         #else
         #    cowsay -e "^" -f "$cows/fish.cow" "$fish_greeting" | lolcat -f
         #end
-        fastfetch
+        clear && fastfetch
+    else if test "$TERM" = "tmux-256color"
+        if test "$(whoami)" = "root"
+            cowsay -e "0" -f "$cows/shark.cow" "ROOT access granted. Be careful!" |
+            lolcat -f
+        else
+            cowsay -e "^" -f "$cows/fish.cow" "$fish_greeting" | lolcat -f
+        end
     else
         # nvim terminal
         figlet -f slant "terminal" | lolcat -f
@@ -32,7 +40,7 @@ function fish_greeting
             set -g fish_greeting $line
         end
     end
- 
+
 
     #    and echo $fish_greeting | lolcat -f
 end

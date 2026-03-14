@@ -48,8 +48,8 @@ abbr --add cat "bat"
 # doas I say, not as I do.
 abbr --add sudo "doas"
 
-# reminds me that trash-cli exists
-abbr --add rm "trash-put"
+# sends file to macos trash
+abbr --add rm "trash"
 
 # homebrew
 abbr --add bw "brew"
@@ -70,6 +70,9 @@ thefuck --alias fk| source
 # fetch
 abbr --add ftch "fastfetch"
 
+# updating
+abbr --add update "rustup update && pip-review --auto && pipx upgrade-all && pip install --upgrade pip && spicetify upgrade &&
+brew doctor && brew update && brew upgrade && brew cleanup && brew doctor"
 # --------------APPLICATIONS--------------
 
 # init homebrew ENV variables

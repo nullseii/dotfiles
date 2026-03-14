@@ -47,7 +47,7 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["D", "S", "T", "B", "C", "G"]
+persistent-workspaces = ["D", "S", "T", "B", "C", "M", "G"]
                          
                         
 
@@ -78,6 +78,15 @@ exec-on-workspace-change = [
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
+
+# fix ghostty
+
+[[on-window-detected]]
+if.app-id="com.mitchellh.ghostty"
+run= [
+  "layout floating",
+]
+
 [gaps]
     inner.horizontal = 10
     inner.vertical =   10

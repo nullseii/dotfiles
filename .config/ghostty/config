@@ -3,16 +3,20 @@ font-family = JetBrainsMono Nerd Font Mono
 font-size = 14.5
 
 # keybindings for splits
-keybind = opt+h=goto_split:left
-keybind = opt+j=goto_split:down
-keybind = opt+k=goto_split:up
-keybind = opt+l=goto_split:right
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:down
+keybind = ctrl+k=goto_split:up
+keybind = ctrl+l=goto_split:right
 
-keybind = opt+shift+h=new_split:left
-keybind = opt+shift+j=new_split:down
-keybind = opt+shift+k=new_split:up
-keybind = opt+shift+l=new_split:right
+keybind = ctrl+shift+h=new_split:left
+keybind = ctrl+shift+j=new_split:down
+keybind = ctrl+shift+k=new_split:up
+keybind = ctrl+shift+l=new_split:right
+keybind = ctrl+n=new_window
 
+keybind = ctrl+a>l=next_tab
+keybind = ctrl+a>h=previous_tab
+keybind = ctrl+a>c=new_tab
 # transparency
 background-opacity = 0.9
 background-blur = true
