@@ -2,3 +2,4 @@
 # I use fish now, so no more zshrc
 .zshrc
 .jj
+.config/jj/repos

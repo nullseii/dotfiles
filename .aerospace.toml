@@ -47,7 +47,7 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["D", "S", "T", "B", "C", "M", "G"]
+persistent-workspaces = ["A", "D", "S", "T", "B", "C", "M", "G", "V"]
                          
                         
 
@@ -81,11 +81,11 @@ exec-on-workspace-change = [
 
 # fix ghostty
 
-[[on-window-detected]]
-if.app-id="com.mitchellh.ghostty"
-run= [
-  "layout floating",
-]
+# [[on-window-detected]]
+# if.app-id="com.mitchellh.ghostty"
+# run= [
+#   "layout floating",
+# ]
 
 [gaps]
     inner.horizontal = 10

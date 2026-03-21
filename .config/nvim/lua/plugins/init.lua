@@ -15,7 +15,6 @@ return {
 
   -- test new blink
   { import = "nvchad.blink.lazyspec" },
-
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -57,28 +56,19 @@ return {
     },
   },
   -- gotta fix bad habits
-  {
-    "m4xshen/hardtime.nvim",
-    lazy = false,
-    dependencies = { "MunifTanjim/nui.nvim" },
-    opts = {},
-  },
+  -- {
+  --   "m4xshen/hardtime.nvim",
+  --   lazy = false,
+  --   dependencies = { "MunifTanjim/nui.nvim" },
+  --   opts = {},
+  -- },
   -- I love smoothness
   {
     "karb94/neoscroll.nvim",
-    lazy = false,
     opts = {},
+    lazy = false,
   },
-  -- undotree, since I don't constantly commit
-  {
-    "jiaoshijie/undotree",
-    ---@module 'undotree.collector'
-    ---@type UndoTreeCollector.Opts
-    opts = {
-      -- your options
-    },
-    lazy = true,
-  },
+  -- undotree, since I don't constantly commit (added in nvim version 0.12)
   -- similar to vscode error dashboard
   {
     "folke/trouble.nvim",
@@ -104,24 +94,80 @@ return {
       -- more opts
     },
   },
+  -- rust, btw
   {
-    "rachartier/tiny-code-action.nvim",
+    "mrcjkb/rustaceanvim",
+    version = "^8", -- Recommended
+    lazy = false, -- This plugin is already lazy
+  },
+  -- garbage day!
+  {
+    "zeioth/garbage-day.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- your options here
+    },
+  },
+  -- yazi
+  ---@type LazySpec
+  {
+    "mikavilpas/yazi.nvim",
+    version = "*", -- use the latest stable version
+    event = "VeryLazy",
     dependencies = {
-      { "nvim-lua/plenary.nvim" },
-
-      -- optional picker via telescope
-      { "nvim-telescope/telescope.nvim" },
-      -- optional picker via fzf-lua
-      { "ibhagwan/fzf-lua" },
-      -- .. or via snacks
+      { "nvim-lua/plenary.nvim", lazy = true },
+    },
+    keys = {
+      -- 👇 in this section, choose your own keymappings!
       {
-        "folke/snacks.nvim",
-        opts = {
-          terminal = {},
-        },
+        "<leader>-",
+        mode = { "n", "v" },
+        "<cmd>Yazi<cr>",
+        desc = "Open yazi at the current file",
+      },
+      {
+        -- Open in the current working directory
+        "<leader>cw",
+        "<cmd>Yazi cwd<cr>",
+        desc = "Open the file manager in nvim's working directory",
+      },
+      {
+        "<c-up>",
+        "<cmd>Yazi toggle<cr>",
+        desc = "Resume the last yazi session",
       },
     },
-    event = "LspAttach",
-    opts = {},
+    ---@type YaziConfig | {}
+    opts = {
+      -- if you want to open yazi instead of netrw, see below for more info
+      open_for_directories = false,
+      keymaps = {
+        show_help = "<f1>",
+      },
+    },
+    -- 👇 if you use `open_for_directories=true`, this is recommended
+    init = function()
+      -- mark netrw as loaded so it's not loaded at all.
+      --
+      -- More details: https://github.com/mikavilpas/yazi.nvim/issues/802
+      vim.g.loaded_netrwPlugin = 1
+    end,
+  },
+  {
+    "folke/snacks.nvim",
+    lazy = false,
+    priority = 1000,
+    ---@type snacks.Config
+    opts = {
+      indent = {
+        -- your indent configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+        enabled = true,
+      },
+      quickfile = {
+        enabled = true,
+      },
+    },
   },
 }

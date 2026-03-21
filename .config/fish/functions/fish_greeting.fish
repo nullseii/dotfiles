@@ -4,7 +4,6 @@ function fish_greeting
     #    set -l line2 \n(printf (_ 'Type %shelp%s for instructions on how to use fish') (set_color green) (set_color normal))
     set -g fish_greeting "$line1$line2"
     #end
-
     set -l cows ~/.config/fish
 
     # The greeting used to be skipped when fish_greeting was empty (not just undefined)
@@ -19,17 +18,31 @@ function fish_greeting
         #else
         #    cowsay -e "^" -f "$cows/fish.cow" "$fish_greeting" | lolcat -f
         #end
-        clear && fastfetch
+
+        abbr --add fastfetch fastfetch --config ~/.config/fastfetch/image.jsonc
+        abbr --add ftch fastfetch --config ~/.config/fastfetch/image.jsonc
+        clear && fastfetch --config ~/.config/fastfetch/image.jsonc
+        # else if test "$TERM" = "tmux-256color"
     else if test "$TERM" = "tmux-256color"
-        if test "$(whoami)" = "root"
-            cowsay -e "0" -f "$cows/shark.cow" "ROOT access granted. Be careful!" |
-            lolcat -f
-        else
-            cowsay -e "^" -f "$cows/fish.cow" "$fish_greeting" | lolcat -f
-        end
+        abbr --add fastfetch fastfetch --kitty-icat ~/Downloads/images/profile-pics/clover.jpeg --logo-width 28 --logo-height 12 
+        abbr --add ftch fastfetch --kitty-icat ~/Downloads/images/profile-pics/clover.jpeg --logo-width 28 --logo-height 12
+        fastfetch --kitty-icat ~/Downloads/images/profile-pics/clover.jpeg --logo-width 28 --logo-height 12     
     else
+        #         if test "$(whoami)" = "root"
+        #     cowsay -e "0" -f "$cows/shark.cow" "ROOT access granted. Be careful!" |
+        #     lolcat -f
+        # else
+        #     cowsay -e "^" -f "$cows/fish.cow" "$fish_greeting" | lolcat -f
+        # end
+        # abbr --add ftch fastfetch --kitty-icat ~/Downloads/images/profile-pics/sans.png --logo-width 28 --logo-height 12
+        # abbr --add fastfetch fastfetch --kitty-icat ~/Downloads/images/profile-pics/sans.png --logo-width 28 --logo-height 12
+        # fastfetch --kitty-icat ~/Downloads/images/profile-pics/sans.png --logo-width 28 --logo-height 12
+        abbr --add ftch fastfetch
+        abbr --add fastfetch fastfetch
+        fastfetch
+        # else
         # nvim terminal
-        figlet -f slant "terminal" | lolcat -f
+        # figlet -f slant "terminal" | lolcat -f
     end
 
     if set -q fish_private_mode

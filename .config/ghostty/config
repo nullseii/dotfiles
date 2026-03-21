@@ -1,5 +1,5 @@
 theme = Catppuccin Mocha
-font-family = JetBrainsMono Nerd Font Mono
+font-family = JetbrainsMono Nerd Font Mono
 font-size = 14.5
 
 # keybindings for splits
@@ -12,7 +12,6 @@ keybind = ctrl+shift+h=new_split:left
 keybind = ctrl+shift+j=new_split:down
 keybind = ctrl+shift+k=new_split:up
 keybind = ctrl+shift+l=new_split:right
-keybind = ctrl+n=new_window
 
 keybind = ctrl+a>l=next_tab
 keybind = ctrl+a>h=previous_tab
@@ -20,6 +19,7 @@ keybind = ctrl+a>c=new_tab
 # transparency
 background-opacity = 0.9
 background-blur = true
+keybind = ctrl+alt+t=toggle_background_opacity
 
 # neovide like shader
 custom-shader = ~/.config/ghostty/shaders/cursor_smear.glsl

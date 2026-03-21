@@ -1,5 +1,6 @@
 [tools]
 java = "lts"
+lua = "5.1"
 node = "latest"
 pipx = "latest"
 python = "latest"
