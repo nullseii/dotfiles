@@ -12,84 +12,75 @@
         // }
     },
     "display": {
-        "separator": " "
+        "key": {
+            "width": 10
+        },
+        "size": {
+            "binaryPrefix": "jedec"
+        },
+        "separator": ""
     },
     "modules": [
+        "break",
         {
-            "key": "╭───────────╮",
-            "type": "custom"
+            "type": "os",
+            "key": "os",
+            "keyColor": "yellow",
+            "format": "{name}"
         },
         {
-            "key": "│ {#31} user    {#keys}│",
-            "type": "title",
-            "format": "{user-name}"
-        },
-        {
-            "key": "│ {#33}󰅐 uptime  {#keys}│",
-            "type": "uptime"
-        },
-        {
-            "key": "│ {#34}{icon} distro  {#keys}│",
-            "type": "os"
-        },
-        {
-            "key": "│ {#35} kernel  {#keys}│",
-            "type": "kernel"
-        },
-        {
-            "key": "│ {#36} wm      {#keys}│",
-            "type": "wm"
-        },
-        {
-            "key": "│ {#36}󰇄 desktop {#keys}│",
-            "type": "de"
-        },
-        {
-            "key": "│ {#31} term    {#keys}│",
-            "type": "terminal"
-        },
-        {
-            "key": "│ {#32} shell   {#keys}│",
-            "type": "shell"
+            "type": "kernel",
+            "key": "ker",
+            "keyColor": "green"
         },
         {
             "type": "packages",
-            "key": "│ {#33}󰏖 apps    {#keys}│"
+            "key": "pkgs",
+            "keyColor": "cyan"
         },
         {
-            "key": "│ {#34}󰉉 disk    {#keys}│",
+            "type": "shell",
+            "key": "sh",
+            "keyColor": "blue",
+            "format": "{pretty-name}"
+        },
+        {
+            "type": "wm",
+            "key": "wm",
+            "keyColor": "red",
+            "format": "{pretty-name}"
+        },
+        {
+            "type": "uptime",
+            "key": "up",
+            "keyColor": "green"
+        },
+        {
+            "type": "cpu",
+            "key": "cpu",
+            "keyColor": "red",
+            "format": "{name}"
+        },
+        {
+            "type": "memory",
+            "key": "ram",
+            "keyColor": "yellow",
+            "format": "{used} / {total}"
+        },
+        {
             "type": "disk",
-            "folders": "/"
+            "key": "disk",
+            "keyColor": "cyan",
+            "folders": [
+                "/"
+            ],
+            "format": "{size-used} / {size-total}"
         },
+        "break",
         {
-            "key": "│ {#36} memory  {#keys}│",
-            "type": "memory"
+            "type": "custom",
+            "format": "\u001b[33m󰮯 \u001b[32m󰊠 \u001b[34m󰊠 \u001b[31m󰊠 \u001b[36m󰊠 \u001b[35m󰊠 \u001b[37m󰊠 \u001b[97m󰊠"
         },
-        {
-            "type": "terminalfont",
-            "key": "│ {#35} font    {#keys}│"
-        },
-    // {
-//       "type": "command",
-      // "key": "│ {#33}󱦟 OS Age  {#keys}│",
-      // "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
-    // },
-    {
-        "key": "├───────────┤",
-        "type": "custom"
-    },
-    {
-        "key": "│ {#39} colors  {#keys}│",
-        "type": "colors",
-        "symbol": "circle"
-    },
-    {
-        "key": "╰───────────╯",
-        "type": "custom"
-    },
-    {
-        "key": "{#34}remember to{#33} SAVE {#34}once in a while - sans",
-        "type": "custom"
-    }
-    ]
+        "break"
+            ]
 }
