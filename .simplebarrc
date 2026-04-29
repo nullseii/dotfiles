@@ -86,7 +86,7 @@
     "netstatsWidget": false,
     "cpuWidget": true,
     "gpuWidget": false,
-    "memoryWidget": false,
+    "memoryWidget": true,
     "batteryWidget": false,
     "wifiWidget": false,
     "vpnWidget": false,
@@ -162,7 +162,7 @@
     "networkDevice": "en0",
     "hideWifiIfDisabled": false,
     "toggleWifiOnClick": false,
-    "hideNetworkName": true
+    "hideNetworkName": false
   },
   "vpnWidgetOptions": {
     "refreshFrequency": 8000,

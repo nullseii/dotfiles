@@ -107,6 +107,8 @@ brew shellenv | source
 zoxide init fish | source
 # make pipx work with fish
 set -gx PATH $PATH /Users/ralsei/.local/bin
+# starship prompt
+starship init fish | source
 
 # --------------THEMING AND CONFIGURATIONS--------------
 
