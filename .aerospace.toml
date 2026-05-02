@@ -41,13 +41,13 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
-automatically-unhide-macos-hidden-apps = false
+automatically-unhide-macos-hidden-apps = true
 
 # List of workspaces that should stay alive even when they contain no windows,
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["Desktop", "Spotify", "Terminal", "Browsing"]
+persistent-workspaces = ["desktop", "music", "terminal", "browsing"]
                          
                         
 
@@ -81,11 +81,46 @@ exec-on-workspace-change = [
 
 # fix ghostty
 
-# [[on-window-detected]]
-# if.app-id="com.mitchellh.ghostty"
-# run= [
-#   "layout floating",
-# ]
+# Spotify
+[[on-window-detected]]
+if.app-id="com.spotify.client"
+run= [
+    "move-node-to-workspace music",
+]
+
+# Helium browser
+[[on-window-detected]]
+if.app-id="net.imput.helium"
+run= [
+    "move-node-to-workspace browsing",
+]
+
+# Anime on brave for DRM
+[[on-window-detected]]
+if.app-id="com.brave.Browser"
+run= [
+    "move-node-to-workspace streaming",
+]
+
+# chat on vesktop (discord but 10x better)
+[[on-window-detected]]
+if.app-id="dev.vencord.vesktop"
+run= [
+    "move-node-to-workspace chat",
+]
+# move visualizer to its own wm, looks bad with split view
+[[on-window-detected]]
+    if.app-id = "com.mitchellh.ghostty"
+    if.workspace = "music"
+    run = ['move-node-to-workspace visualizer']
+
+[[on-window-detected]]
+    if.app-id = "com.apple.finder"
+    run = ['move-node-to-workspace desktop']
+
+[[on-window-detected]]
+    if.app-id = "com.microsoft.VSCode"
+    run = ['move-node-to-workspace ide']
 
 [gaps]
     inner.horizontal = 10
@@ -144,7 +179,7 @@ exec-on-workspace-change = [
     alt-shift-k = 'move up'
     alt-shift-l = 'move right'
 
-    # See: https://nikitabobko.github.io/AeroSpace/commands#resize
+    # See: https://nikitabobko.github.io/AeroSpace/cVommands#resize
     alt-minus = 'resize smart -50'
     alt-equal = 'resize smart +50'
 
@@ -158,24 +193,24 @@ exec-on-workspace-change = [
     alt-7 = 'workspace 7'
     alt-8 = 'workspace 8'
     alt-9 = 'workspace 9'
-    alt-a = 'workspace Anime' # In your config, you can drop workspace bindings that you don't need
-    alt-b = 'workspace Browsing'
-    alt-c = 'workspace Chat'
-    alt-d = 'workspace Desktop'
+    alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
+    alt-b = 'workspace browsing'
+    alt-c = 'workspace chat'
+    alt-d = 'workspace desktop'
     alt-e = 'workspace E'
     alt-f = 'workspace F'
-    alt-g = 'workspace Games'
-    alt-i = 'workspace I'
-    alt-m = 'workspace M'
+    alt-g = 'workspace games'
+    alt-i = 'workspace ide'
+    alt-m = 'workspace music'
     alt-n = 'workspace N'
     alt-o = 'workspace O'
-    alt-p = 'workspace Paint'
+    alt-p = 'workspace paint'
     alt-q = 'workspace Q'
-    alt-r = 'workspace Rice'
-    alt-s = 'workspace Spotify'
-    alt-t = 'workspace Terminal'
+    alt-r = 'workspace rice'
+    alt-s = 'workspace streaming'
+    alt-t = 'workspace terminal'
     alt-u = 'workspace U'
-    alt-v = 'workspace V'
+    alt-v = 'workspace visualizer'
     alt-w = 'workspace W'
     alt-x = 'workspace X'
     alt-y = 'workspace Y'
@@ -191,24 +226,24 @@ exec-on-workspace-change = [
     alt-shift-7 = 'move-node-to-workspace 7'
     alt-shift-8 = 'move-node-to-workspace 8'
     alt-shift-9 = 'move-node-to-workspace 9'
-    alt-shift-a = 'move-node-to-workspace Anime'
-    alt-shift-b = 'move-node-to-workspace Browsing'
-    alt-shift-c = 'move-node-to-workspace Chat'
-    alt-shift-d = 'move-node-to-workspace Desktop'
+    alt-shift-a = 'move-node-to-workspace anime'
+    alt-shift-b = 'move-node-to-workspace browsing'
+    alt-shift-c = 'move-node-to-workspace chat'
+    alt-shift-d = 'move-node-to-workspace desktop'
     alt-shift-e = 'move-node-to-workspace E'
 #    alt-shift-f = 'move-node-to-workspace F'
-    alt-shift-g = 'move-node-to-workspace Games'
-    alt-shift-i = 'move-node-to-workspace I'
-    alt-shift-m = 'move-node-to-workspace M'
+    alt-shift-g = 'move-node-to-workspace games'
+    alt-shift-i = 'move-node-to-workspace ide'
+    alt-shift-m = 'move-node-to-workspace music'
     alt-shift-n = 'move-node-to-workspace N'
     alt-shift-o = 'move-node-to-workspace O'
-    alt-shift-p = 'move-node-to-workspace Paint'
+    alt-shift-p = 'move-node-to-workspace paint'
     alt-shift-q = 'move-node-to-workspace Q'
-    alt-shift-r = 'move-node-to-workspace Rice'
-    alt-shift-s = 'move-node-to-workspace Spotify'
-    alt-shift-t = 'move-node-to-workspace Terminal'
+    alt-shift-r = 'move-node-to-workspace rice'
+    alt-shift-s = 'move-node-to-workspace streaming'
+    alt-shift-t = 'move-node-to-workspace terminal'
     alt-shift-u = 'move-node-to-workspace U'
-    alt-shift-v = 'move-node-to-workspace V'
+    alt-shift-v = 'move-node-to-workspace visualizer'
     alt-shift-w = 'move-node-to-workspace W'
     alt-shift-x = 'move-node-to-workspace X'
     alt-shift-y = 'move-node-to-workspace Y'
