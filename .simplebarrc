@@ -14,7 +14,7 @@
     "widgetsBackgroundColorAsForeground": true,
     "widgetMaxWidth": "160px",
     "slidingAnimationPace": 4,
-    "font": "JetBrainsMonoNFP-Regular, DepartureMono Nerd Font, Monaco, Menlo, monospace",
+    "font": "DepartureMono Nerd Font, JetBrainsMonoNFP-Regular, DepartureMono Nerd Font, Monaco, Menlo, monospace",
     "fontSize": "11px",
     "yabaiPath": "$(which yabai)",
     "aerospacePath": "/opt/homebrew/bin/aerospace",
@@ -52,7 +52,7 @@
   "process": {
     "showOnDisplay": "1",
     "displayForFocusedSpace": false,
-    "displayOnlyCurrent": true,
+    "displayOnlyCurrent": false,
     "centered": true,
     "showCurrentSpaceMode": false,
     "hideWindowTitle": true,
@@ -108,7 +108,7 @@
     "refreshFrequency": 600000,
     "showOnDisplay": "",
     "showIcon": true,
-    "hideWhenNoNotification": false,
+    "hideWhenNoNotification": true,
     "notificationUrl": "https://github.com/notifications",
     "ghBinaryPath": "/opt/homebrew/bin/gh"
   },
@@ -266,7 +266,22 @@
     "showSpecter": true
   },
   "userWidgets": {
-    "userWidgetsList": {}
+    "userWidgetsList": {
+      "1": {
+        "title": "Mullvad",
+        "icon": "VPN",
+        "backgroundColor": "--magenta",
+        "output": "bash ~/mullvad.sh",
+        "onClickAction": "bash ~/mullvad-connect.sh",
+        "onRightClickAction": "open -a \"Mullvad VPN\"",
+        "onMiddleClickAction": "",
+        "refreshFrequency": "5000",
+        "showOnDisplay": "1",
+        "active": true,
+        "noIcon": true,
+        "hideWhenNoOutput": true
+      }
+    }
   },
   "customStyles": {
     "styles": "/* your custom css styles here */"
