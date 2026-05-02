@@ -1,5 +1,6 @@
 theme = Catppuccin Mocha
-font-family = JetbrainsMono Nerd Font Mono
+# font-family = JetbrainsMono Nerd Font Mono
+font-family = DepartureMono Nerd Font
 font-size = 14.5
 
 # keybindings for splits

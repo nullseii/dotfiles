@@ -19,14 +19,16 @@ function fish_greeting
         #    cowsay -e "^" -f "$cows/fish.cow" "$fish_greeting" | lolcat -f
         #end
 
-        abbr --add fastfetch fastfetch --config ~/.config/fastfetch/image.jsonc
-        abbr --add ftch fastfetch --config ~/.config/fastfetch/image.jsonc
-        clear && fastfetch --config ~/.config/fastfetch/image.jsonc
+        abbr --add fastfetch fastfetch --config ~/.config/fastfetch/image.jsonc --bright-color false
+        abbr --add ftch fastfetch --config ~/.config/fastfetch/image.jsonc --bright-color false
+        clear && fastfetch --config ~/.config/fastfetch/image.jsonc --bright-color false
         # else if test "$TERM" = "tmux-256color"
     else if test "$TERM" = "tmux-256color"
-        abbr --add fastfetch fastfetch --kitty-icat ~/Downloads/images/profile-pics/clover.jpeg --logo-width 28 --logo-height 12 
-        abbr --add ftch fastfetch --kitty-icat ~/Downloads/images/profile-pics/clover.jpeg --logo-width 28 --logo-height 12
-        fastfetch --kitty-icat ~/Downloads/images/profile-pics/clover.jpeg --logo-width 28 --logo-height 12     
+        set -l parameters "--kitty-icat ~/Downloads/images/profile-pics/clover.jpeg --logo-width 28 --logo-height 12 --bright-color false"
+        set -l command "fastfetch $parameters"
+        abbr --add fastfetch "$command"
+        abbr --add ftch "$command"
+        fastfetch --kitty-icat ~/Downloads/images/profile-pics/clover.jpeg --logo-width 28 --logo-height 12 --bright-color false
     else
         #         if test "$(whoami)" = "root"
         #     cowsay -e "0" -f "$cows/shark.cow" "ROOT access granted. Be careful!" |
@@ -37,9 +39,9 @@ function fish_greeting
         # abbr --add ftch fastfetch --kitty-icat ~/Downloads/images/profile-pics/sans.png --logo-width 28 --logo-height 12
         # abbr --add fastfetch fastfetch --kitty-icat ~/Downloads/images/profile-pics/sans.png --logo-width 28 --logo-height 12
         # fastfetch --kitty-icat ~/Downloads/images/profile-pics/sans.png --logo-width 28 --logo-height 12
-        abbr --add ftch fastfetch
-        abbr --add fastfetch fastfetch
-        fastfetch
+        abbr --add ftch fastfetch --bright-color false
+        abbr --add fastfetch fastfetch --bright-color false
+        fastfetch --bright-color false
         # else
         # nvim terminal
         # figlet -f slant "terminal" | lolcat -f

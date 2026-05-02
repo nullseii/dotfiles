@@ -53,6 +53,8 @@ abbr --add dot "z ~/.dotfiles"
 abbr --add vim "$EDITOR"
 abbr --add vi "$EDITOR"
 abbr --add nvim "$EDITOR"
+export EDITOR "$EDITOR"
+export VISUAL "$EDITOR"
 abbr --add ls "lsd"
 abbr --add tree "lsd --tree"
 
