@@ -64,8 +64,7 @@ abbr --add cd "z"
 # bat>cat
 abbr --add cat "bat"
 
-# doas I say, not as I do.
-abbr --add sudo "doas"
+# remove doas (has so many security flaws compared to sudo)
 
 # sends file to macos trash
 abbr --add rm "trash"

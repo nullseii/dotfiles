@@ -277,7 +277,7 @@
         "onMiddleClickAction": "",
         "refreshFrequency": "5000",
         "showOnDisplay": "1",
-        "active": true,
+        "active": false,
         "noIcon": true,
         "hideWhenNoOutput": true
       }
